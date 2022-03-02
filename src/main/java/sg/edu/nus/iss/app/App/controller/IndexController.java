@@ -39,7 +39,7 @@ public class IndexController {
         p.setGender('F');
         model.addAttribute("currtime", new Date().toString());
         model.addAttribute("person", p);
-        return "currtime";
+        return "person";
     }
 
     @GetMapping("/allperson")
@@ -61,7 +61,7 @@ public class IndexController {
         model.addAttribute("currtime", new Date().toString());
         model.addAttribute("person", p);
         model.addAttribute("allperson", allperson);
-        return "currtime";
+        return "allperson";
     }
 
     @GetMapping("/searchPerson")
@@ -95,32 +95,7 @@ public class IndexController {
         model.addAttribute("person", p);
         model.addAttribute("allperson", allperson);
         model.addAttribute("result", pResult);
-        return "currtime";
+        return "searchPerson";
     }
-
-    @GetMapping("/getSomeone/{firstName}")
-    public String getKenneth(@PathVariable(name="firstName") String firstName,
-        Model model){
-        Person p = new Person();
-        
-        if(firstName.equals("Kenneth")){
-            p.setId(1);
-            p.setFirstName("Kenneth");
-            p.setLastName("Phang");
-            p.setGender('M');
-        }
-
-        if(firstName.equals("Christine")){
-            p.setId(1);
-            p.setFirstName("Christine");
-            p.setLastName("Tan");
-            p.setGender('F');
-        }
-        
-
-        model.addAttribute("result", p);
-        return "pathvar";
-    }
-
 
 }

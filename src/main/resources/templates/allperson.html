@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><span th:text="${currtime}"></span></h1>
+    
+
+    <p th:text="${person.id}" />
+    <p th:text="${person.firstName}" />
+    <p th:text="${person.lastName}" />
+    <p th:text="${person.gender}" />
+    <tbody>
+        <tr>
+            <td th:text="${person.id}" />
+            <td th:text="${person.firstName}" />
+            <td th:text="${person.lastName}" />
+            <td th:text="${person.gender}" />
+        </tr>
+    </tbody>
+    <hr>
+    <br>
+    <tbody>
+        <tr th:each="person : ${allperson}">
+            <td th:text="${person.id}"></td>
+            <td th:text="${person.firstName}"></td>
+            <td th:text="${person.lastName}"></td>
+            <td>
+                <span th:if="${person.gender} == 'M'" th:text="Male" />
+                <span th:unless="${person.gender} == 'M'" th:text="Female" />
+            </td>
+            <br>
+        </tr>
+       
+    </tbody>
+
+    <br>
+    <hr>
+    <h2>Query String</h2>
+    <tbody>
+        <tr>
+            <td th:text="${result.id}" />
+            <td th:text="${result.firstName}" />
+            <td th:text="${result.lastName}" />
+            <td>
+                <span th:if="${result.gender} == 'M'" th:text="Male" />
+                <span th:unless="${result.gender} == 'M'" th:text="Female" />
+            </td>
+        </tr>
+    </tbody>
+
+</body>
+</html>

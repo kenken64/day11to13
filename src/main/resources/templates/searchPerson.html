@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Query String</h2>
+    <tbody>
+        <tr>
+            <td th:text="${result.id}" />
+            <td th:text="${result.firstName}" />
+            <td th:text="${result.lastName}" />
+            <td>
+                <span th:if="${result.gender} == 'M'" th:text="Male" />
+                <span th:unless="${result.gender} == 'M'" th:text="Female" />
+            </td>
+        </tr>
+    </tbody>
+
+</body>
+</html>
